@@ -87,7 +87,9 @@ Student-Result-Management-System/
 ---
 
 ## outputs/results
+### department-wise toppers : 
 <img width="481" height="135" alt="department_wise_toppers" src="https://github.com/user-attachments/assets/b2426ace-1030-4793-ad07-9e9e126c7744" />
+### overall ranking
 <img width="406" height="168" alt="overall_ranking" src="https://github.com/user-attachments/assets/8ac05149-55f5-4828-b659-98dfb065206e" />
 
 ---
