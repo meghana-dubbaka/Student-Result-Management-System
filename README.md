@@ -17,15 +17,13 @@ The database is normalized and consists of the following entities:
 - *Subjects* – Stores subject details
 - *Marks* – Junction table storing student marks per subject
 
-Referential integrity enforced using foreign keys  
-ER diagram designed using MySQL Workbench  
+Referential integrity enforced using foreign keys.  
+ER diagram designed using MySQL Workbench . 
 
 ---
 
 ## ER Diagram
 <img width="556" height="595" alt="ER_diagram_student_result_management_system" src="https://github.com/user-attachments/assets/1adb5b48-d35b-411c-81c5-c1f2d884c2df" />
-
-
 
 ---
 
@@ -40,25 +38,72 @@ ER diagram designed using MySQL Workbench
 - Triggers for data validation
 
 ---
+## key SQL Queries
 
+### Create Tables
+<pre>
+CREATE TABLE Students(
+StudentID INT PRIMARY KEY,
+FirstName VARCHAR(50),
+LastName VARCHAR(50),
+Gender VARCHAR(10),
+DeptID INT,
+FOREIGN KEY (DeptID) REFERENCES Departments(DeptID)
+);
+-- SUBJECTS
+CREATE TABLE Subjects(
+SubjectID INT PRIMARY KEY,
+SubjectName VARCHAR(50),
+MaxMarks int);
+-- MARKS
+CREATE TABLE Marks(
+MarkID INT PRIMARY KEY,
+StudentID INT,
+SubjectID INT,
+MarksObtained INT,
+FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+FOREIGN KEY (SubjectID) REFERENCES Subjects(SubjectID)
+);</pre>  
+
+
+---
+
+## Full SQL Code
+
+- [student_result_management_system.sql](https://github.com/user-attachments/files/24140982/student_result_management_system.sql)– Database schema & logic
+
+
+---
+
+## Project Structure
+Student-Result-Management-System/
+├── README.md
+├── student_result_management_system.sql
+├── ER_Diagram.png
+└── outputs/
+    ├── department_wise_toppers.png
+    └── overall_ranking.png
+
+---
+
+## outputs/results
+<img width="481" height="135" alt="department_wise_toppers" src="https://github.com/user-attachments/assets/b2426ace-1030-4793-ad07-9e9e126c7744" />
+<img width="406" height="168" alt="overall_ranking" src="https://github.com/user-attachments/assets/8ac05149-55f5-4828-b659-98dfb065206e" />
+
+---
+    
 ## Views & Reports
 - *student_complete_output*
   - Consolidated student result view
   - Combines students, departments, subjects, and marks
   - Calculates total marks, GPA, and grades
-
+ 
 ---
 
 ##  Tools & Technologies
 - MySQL
 - MySQL Workbench
 - SQL (DDL, DML, Joins, Subqueries, Window Functions)
-
----
-
-## Files Included
-- [student_result_management_system.sql](https://github.com/user-attachments/files/24140982/student_result_management_system.sql)– Database schema & logic
-- <img width="556" height="595" alt="ER_diagram_student_result_management_system" src="https://github.com/user-attachments/assets/42ba703c-ed76-42f7-818c-964ad1afb3e4" /> – ER diagram
 
 ---
 
