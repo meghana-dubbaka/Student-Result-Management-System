@@ -42,6 +42,12 @@ ER diagram designed using MySQL Workbench .
 
 ### Create Tables
 <pre>
+-- DEPARTMENTS
+CREATE TABLE Departments(
+DeptID INT PRIMARY KEY,
+DeptName VARCHAR(10)
+);
+-- STUDENTS
 CREATE TABLE Students(
 StudentID INT PRIMARY KEY,
 FirstName VARCHAR(50),
